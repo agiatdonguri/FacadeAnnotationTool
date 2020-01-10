@@ -26,8 +26,8 @@ void Canvas::paintEvent(QPaintEvent *event) {
 			for (auto pos : floorParams) {
 				painter.drawLine(0, pos * image.height(), image.width(), pos * image.height());
 			}
-			for (int i = 1; i < floorParams.size() - 1; i += 3) {
-				painter.drawRect(0, floorParams[i] * image.height(), image.width(), (floorParams[i + 1] - floorParams[i]) * image.height());
+			for (int i = 1; i < floorParams.size() - 1; i += 2) {
+				painter.fillRect(0, floorParams[i] * image.height(), image.width(), (floorParams[i + 1] - floorParams[i]) * image.height(), QColor(0, 0, 255, 150));
 			}
 		}
 		else {
